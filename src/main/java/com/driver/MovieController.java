@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Movies")
+@RequestMapping("/Movie")
 public class MovieController {
     @Autowired
     MovieService movieService;
-    @PostMapping("/add-movies")
-    public ResponseEntity<String> addMovies(@RequestBody Movies movies)
+    @PostMapping("/add-movie")
+    public ResponseEntity<String> addMovies(@RequestBody Movie movie)
     {
-        String add = movieService.addMovies(movies);
+        String add = movieService.addMovies(movie);
         return new ResponseEntity<>(add, HttpStatus.CREATED);
     }
 
@@ -35,9 +35,9 @@ public class MovieController {
     }
 
     @GetMapping("/get-movie-by-name/{name}")
-    public ResponseEntity<Movies> getMovieByName(@PathVariable("name") String name)
+    public ResponseEntity<Movie> getMovieByName(@PathVariable("name") String name)
     {
-        Movies moviename = movieService.getMovieByName(name);
+        Movie moviename = movieService.getMovieByName(name);
         return new ResponseEntity<>(moviename, HttpStatus.CREATED);
     }
 

@@ -5,20 +5,19 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public class MovieRepository {
 
-    HashMap<String, Movies> moviesDB = new HashMap<>();
+    HashMap<String, Movie> moviesDB = new HashMap<>();
     HashMap<String, Director> directorDB = new HashMap<>();
     HashMap<String, List<String>> moviesDirectorPairDB = new HashMap<>();
 
-    public String addMovies(Movies movie)
+    public String addMovies(Movie movie)
     {
         String movieName = movie.getName();
         moviesDB.put(movieName, movie);
-        return "Movies has been Successfully added";
+        return "Movie has been Successfully added";
     }
 
     public String addDirector(Director director)
@@ -42,13 +41,13 @@ public class MovieRepository {
            list.add(movieName);
            moviesDirectorPairDB.put(directorName, list);
        }
-       return "Movies Director Pair has been added successfullly";
+       return "Movie Director Pair has been added successfullly";
     }
 
-    public Movies getMovieByName(String movieName)
+    public Movie getMovieByName(String movieName)
     {
-        Movies movies = moviesDB.get(movieName);
-        return movies;
+        Movie movie = moviesDB.get(movieName);
+        return movie;
     }
     public Director getDirectorByName(String directorName)
     {

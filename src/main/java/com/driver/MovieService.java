@@ -2,7 +2,6 @@ package com.driver;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -11,9 +10,9 @@ public class MovieService {
     @Autowired
     MovieRepository movieRepository;
 
-    public String addMovies(Movies movies)
+    public String addMovies(Movie movie)
     {
-        String add = movieRepository.addMovies(movies);
+        String add = movieRepository.addMovies(movie);
         return add;
     }
 
@@ -29,10 +28,10 @@ public class MovieService {
         return add;
     }
 
-    public Movies getMovieByName(String movieName)
+    public Movie getMovieByName(String movieName)
     {
-        Movies movies = movieRepository.getMovieByName(movieName);
-        return movies;
+        Movie movie = movieRepository.getMovieByName(movieName);
+        return movie;
     }
     public Director getDirectorByName(String teacherName)
     {

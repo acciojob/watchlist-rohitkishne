@@ -10,9 +10,9 @@ public class MovieService {
     @Autowired
     MovieRepository movieRepository;
 
-    public String addMovies(Movie movie)
+    public String addMovie(Movie movie)
     {
-        String add = movieRepository.addMovies(movie);
+        String add = movieRepository.addMovie(movie);
         return add;
     }
 

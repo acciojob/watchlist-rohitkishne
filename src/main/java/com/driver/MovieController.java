@@ -13,9 +13,9 @@ public class MovieController {
     @Autowired
     MovieService movieService;
     @PostMapping("/add-movie")
-    public ResponseEntity<String> addMovies(@RequestBody Movie movie)
+    public ResponseEntity<String> addMovie(@RequestBody Movie movie)
     {
-        String add = movieService.addMovies(movie);
+        String add = movieService.addMovie(movie);
         return new ResponseEntity<>(add, HttpStatus.CREATED);
     }
 
@@ -56,7 +56,7 @@ public class MovieController {
     }
 
     @GetMapping("/get-all-movies")
-    public ResponseEntity<List<String>> getAllMovies()
+    public ResponseEntity<List<String>> findAllMovies()
     {
         List<String> allMovies = movieService.getAllMovies();
         return new ResponseEntity<>(allMovies, HttpStatus.CREATED);

@@ -13,7 +13,7 @@ public class MovieRepository {
     HashMap<String, Director> directorDB = new HashMap<>();
     HashMap<String, List<String>> moviesDirectorPairDB = new HashMap<>();
 
-    public String addMovies(Movie movie)
+    public String addMovie(Movie movie)
     {
         String movieName = movie.getName();
         moviesDB.put(movieName, movie);
